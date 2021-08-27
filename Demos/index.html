@@ -1,0 +1,74 @@
+<!-- this is important -->
+<!DOCTYPE html> 
+
+<html>
+<title>HTML Tutorial</title>
+
+<style>
+body  {
+    background-color: aliceblue;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: black;
+}
+
+button {
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    border: none;
+    background: antiquewhite;
+}
+
+.center {
+    text-align: center;
+}
+</style>
+<body>
+<div class = "center">
+<h1 id = "superheading"></h1>
+<p>Store Counter for Covid-19</p>
+<p id = "superparagraph">0</p>
+<button onclick = "counter()">Increment</button>
+<button onclick = "leave()">Decrement</button>
+</div>
+<script>
+    document.getElementById("superheading").innerHTML = "Customer Count"
+
+    var click = 0;
+    function counter() {
+        if (click == 25) {
+            alert("Stop letting people in")
+            click = 25 
+            document.getElementById("superparagraph").innerHTML = click
+        }
+        else {
+            click += 1 
+            document.getElementById("superparagraph").innerHTML = click
+        }
+    }
+
+    function leave() {
+        if (click <= 0) {
+            alert("Can't have Negative people coming in haha")
+            click = 0 
+            document.getElementById("superparagraph").innerHTML = click
+        }
+        else {
+            click -= 1 
+            document.getElementById("superparagraph").innerHTML = click
+        }
+        
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+

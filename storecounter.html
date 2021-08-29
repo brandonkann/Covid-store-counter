@@ -1,0 +1,104 @@
+<!-- this is important -->
+<!DOCTYPE html> 
+
+<html>
+<title>HTML Tutorial</title>
+
+<style>
+body  {
+    background-color: aliceblue;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    color: black;
+}
+
+.prepare {
+    text-align: center;
+}
+
+button {
+    height: 40px;
+    width: 120px;
+    font-size: 20px;
+    border: none;
+    background: antiquewhite;
+}
+
+.center {
+    text-align: center;
+}
+</style>
+<body onload = "prepare()">
+
+<div id = "prepare" class = "prepare">
+    <h2>What is the Maximum Store Capacity?</h2>
+    <input id ="customers" placeholder = "Enter a Number"/>
+    <button onclick = "start()">Enter</button>
+</div>
+
+<div id = "center" class = "center">
+<h1 id = "superheading"></h1>
+<p>Store Counter for Covid-19</p>
+<p id = "superparagraph">0</p>
+<button id = "increment" onclick = "counter()">Increment</button>
+<button onclick = "leave()">Decrement</button>
+</div>
+<script>
+    document.getElementById("superheading").innerHTML = "Customer Count"
+    var maxCount
+    
+    
+    var click = 0;
+    function counter() {
+        console.log(maxCount);
+        if (click == maxCount) {
+            document.getElementById("increment").style.backgroundColor = "red";
+            alert("Stop letting people in")
+            click = maxCount 
+            document.getElementById("superparagraph").innerHTML = click
+        }
+        else {
+            click += 1 
+            document.getElementById("superparagraph").innerHTML = click
+        }
+    }
+
+    function leave() {
+        if (click <= 0) {
+            alert("Can't have Negative people coming in haha")
+            click = 0 
+            document.getElementById("superparagraph").innerHTML = click
+        }
+        else {
+            click -= 1 
+            document.getElementById("increment").style.backgroundColor = "antiquewhite";
+            document.getElementById("superparagraph").innerHTML = click
+        }
+        
+
+    }
+
+    function start() {
+        document.getElementById("center").style.display = "block";
+        document.getElementById("prepare").style.display = "none";
+        var value = document.getElementById("customers").value; 
+        var maxValue = Number(value);
+        maxCount = maxValue;
+
+    }
+
+    function prepare() {
+        document.getElementById("center").style.display = "none";
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
